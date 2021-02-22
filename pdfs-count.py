@@ -14,6 +14,11 @@ for pdf in files:
     # printing number of pages in pdf file
     print("pdf name: ", pdf, " page_count: ", pdfReader.numPages)
     pages += pdfReader.numPages
+    # creating a page object
+    pageObj = pdfReader.getPage(0)
+
+    # extracting text from page
+    print(pageObj.extractText())
     # closing the pdf file object
     pdfFileObj.close()
 print("total number of pages is ", pages)
